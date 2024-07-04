@@ -1,0 +1,8 @@
+
+ð,src/main/scala/app/particule/particles.scala2
+ app/2
+ app/particule/:ï
+ æNo class, trait or object is defined in the compilation unit.
+The incremental compiler cannot record the dependency information in such case.
+Some errors like unused import referring to a non-existent class might not be reported.
+PZ C970F8AF0B22998497F6551C1C530FB8
