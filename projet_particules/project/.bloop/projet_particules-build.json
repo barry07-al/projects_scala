@@ -2,15 +2,15 @@
     "version": "1.4.0",
     "project": {
         "name": "projet_particules-build",
-        "directory": "/home/barryao/projet/scala_cours/projet_particules/project",
-        "workspaceDir": "/home/barryao/projet/scala_cours/projet_particules/project",
+        "directory": "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project",
+        "workspaceDir": "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project",
         "sources": [
-            "/home/barryao/projet/scala_cours/projet_particules/project/src/main/scala",
-            "/home/barryao/projet/scala_cours/projet_particules/project/src/main/scala-2.12",
-            "/home/barryao/projet/scala_cours/projet_particules/project/src/main/scala-2",
-            "/home/barryao/projet/scala_cours/projet_particules/project/src/main/java",
-            "/home/barryao/projet/scala_cours/projet_particules/project/src/main/scala-sbt-1.0",
-            "/home/barryao/projet/scala_cours/projet_particules/project/target/scala-2.12/sbt-1.0/src_managed/main"
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/src/main/scala",
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/src/main/scala-2.12",
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/src/main/scala-2",
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/src/main/java",
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/src/main/scala-sbt-1.0",
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/target/scala-2.12/sbt-1.0/src_managed/main"
         ],
         "dependencies": [
             
@@ -104,11 +104,11 @@
             "/home/barryao/.cache/coursier/v1/https/repo1.maven.org/maven2/org/reactivestreams/reactive-streams/1.0.3/reactive-streams-1.0.3.jar",
             "/home/barryao/.cache/coursier/v1/https/repo1.maven.org/maven2/com/typesafe/config/1.4.2/config-1.4.2.jar"
         ],
-        "out": "/home/barryao/projet/scala_cours/projet_particules/project/.bloop/projet_particules-build",
-        "classesDir": "/home/barryao/projet/scala_cours/projet_particules/project/.bloop/projet_particules-build/scala-2.12/sbt-1.0/classes",
+        "out": "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/.bloop/projet_particules-build",
+        "classesDir": "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/.bloop/projet_particules-build/scala-2.12/sbt-1.0/classes",
         "resources": [
-            "/home/barryao/projet/scala_cours/projet_particules/project/src/main/resources",
-            "/home/barryao/projet/scala_cours/projet_particules/project/target/scala-2.12/sbt-1.0/resource_managed/main"
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/src/main/resources",
+            "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/target/scala-2.12/sbt-1.0/resource_managed/main"
         ],
         "scala": {
             "organization": "org.scala-lang",
@@ -215,7 +215,7 @@
             "config": {
                 "home": "/home/barryao/.sdkman/candidates/java/17.0.7-zulu",
                 "options": [
-                    "-Duser.dir=/home/barryao/projet/scala_cours/projet_particules/project"
+                    "-Duser.dir=/home/barryao/projet/scala_cours/projects_scala/projet_particules/project"
                 ]
             },
             "mainClass": [
@@ -224,11 +224,11 @@
             "runtimeConfig": {
                 "home": "/home/barryao/.sdkman/candidates/java/17.0.7-zulu",
                 "options": [
-                    "-Duser.dir=/home/barryao/projet/scala_cours/projet_particules/project"
+                    "-Duser.dir=/home/barryao/projet/scala_cours/projects_scala/projet_particules/project"
                 ]
             },
             "classpath": [
-                "/home/barryao/projet/scala_cours/projet_particules/project/.bloop/projet_particules-build/scala-2.12/sbt-1.0/classes",
+                "/home/barryao/projet/scala_cours/projects_scala/projet_particules/project/.bloop/projet_particules-build/scala-2.12/sbt-1.0/classes",
                 "/home/barryao/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/sbt-bloop_2.12_1.0/1.5.18/sbt-bloop_2.12_1.0-1.5.18.jar",
                 "/home/barryao/.cache/coursier/v1/https/repo1.maven.org/maven2/ch/epfl/scala/bloop-config_2.12/2.0.0/bloop-config_2.12-2.0.0.jar",
                 "/home/barryao/.cache/coursier/v1/https/repo1.maven.org/maven2/com/github/plokhotnyuk/jsoniter-scala/jsoniter-scala-core_2.12/2.4.0/jsoniter-scala-core_2.12-2.4.0.jar",

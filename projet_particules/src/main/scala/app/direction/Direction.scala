@@ -1,5 +1,6 @@
 package app.direction
 
-enum Direction {
-  case North, East, South, West, NorthEast, SouthEast, SouthWest, NorthWest
+object Direction extends Enumeration {
+  type Direction = Value
+  val North, East, South, West, NorthEast, SouthEast, SouthWest, NorthWest = Value
 }
