@@ -1,38 +1,40 @@
 package app
 
-import app.particule.Particule
-import app.particule.Particles
+import app.particule.{Particule, Particules}
 import scalafx.application.JFXApp3
+import scalafx.geometry.Rectangle2D
 import scalafx.scene.Scene
 import scalafx.scene.paint.Color._
 import scalafx.animation.Timeline
 import scalafx.util.Duration
-import scalafx.Includes._
 import scalafx.animation.KeyFrame
 import scalafx.scene.shape.Circle
-import scalafx.collections.ObservableBuffer
+import scalafx.stage.Screen
 
 object Main extends JFXApp3 {
 
-  val numParticles = 1500
-  val particleRadius = 3
-
-  var particles = new Particles(numParticles, particleRadius)
-
+  val particleRadius: Int    = 3
+  val numberOfParticles: Int = 1500
+  
   override def start(): Unit = {
+    val screenBounds: Rectangle2D = Screen.primary.visualBounds
+    val boardWidth = screenBounds.width.toInt
+    val boardHeight = screenBounds.height.toInt
+    var particles = new Particules(numberOfParticles, particleRadius, boardWidth, boardHeight)
+    
     stage = new JFXApp3.PrimaryStage {
-      title.value = "Particules Simulation"
-      width = 1200
-      height = 1200
+      title.value = "Simulation de Particules"
+      width = boardWidth
+      height = boardHeight
       scene = new Scene {
         fill = White
-        val particleNodes = particles.getParticles().map(p => drawParticule(p))
+        val particleNodes = particles.getParticles().map(drawParticule)
         content = particleNodes
 
         val timeline = new Timeline {
           cycleCount = Timeline.Indefinite
           keyFrames = Seq(
-            KeyFrame(Duration(10), onFinished = _ => {
+            KeyFrame(Duration(20), onFinished = _ => {
               particles = particles.update()
               particleNodes.zip(particles.getParticles()).foreach {
                 case (node, particle) =>
@@ -47,7 +49,7 @@ object Main extends JFXApp3 {
     }
   }
 
-  def drawParticule(p: Particule) = {
+  def drawParticule(p: Particule): Circle = {
     new Circle {
       centerX = p.position._1
       centerY = p.position._2

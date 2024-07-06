@@ -5,11 +5,12 @@ import app.direction.Direction
 import app.direction.Direction._
 import scala.util.Random
 import app.direction.DirectionUtils
+import scalafx.scene.input.KeyCode.P
 
 final class Particule(val radius: Double, val position: (Double, Double), val color: Color, val direction: Direction) {
 
-  def updatePosition(boardWidth: Double, boardHeight: Double, particles: Array[Particule]): Particule = {
-    val (x, y) = position
+  def update(boardWidth: Int, boardHeight: Int, particles: Array[Particule]): Particule = {
+    // Déplacement en fonction de la direction
     val (dx, dy) = direction match {
       case North => (0.0, -1.0)
       case East => (1.0, 0.0)
@@ -20,29 +21,26 @@ final class Particule(val radius: Double, val position: (Double, Double), val co
       case SouthWest => (-1.0, 1.0)
       case NorthWest => (-1.0, -1.0)
     }
-    val newX = x + dx
-    val newY = y + dy
 
-    // Gestion du rebondissement sur les bords
-    val (newDirectionX, newDirectionY) = {
-      if (newX <= 0 || newX >= boardWidth - radius) (-dx, dy)
-      else (dx, dy)
+    // Nouvelles coordonnées après déplacement
+    val newX = (position._1 + dx + boardWidth) % boardWidth
+    val newY = (position._2 + dy + boardHeight) % boardHeight
 
-      if (newY <= 0 || newY >= boardHeight - radius) (dx, -dy)
-      else (dx, dy)
+    // Vérification de collision avec d'autres particules en vérifiant
+    // si la distance entre les particules est inférieure à 2 fois le rayon
+    val collision = particles.exists(p => p != this && distance(p.position, (newX, newY)) < radius * 2)
 
-      (dx, dy)
+    if (collision) {
+      // Changement de direction aléatoire
+      Particule(radius, (position._1, position._2), color, DirectionUtils.randomDirection())
+    } else {
+      // Déplacement de la particule à la nouvelle position
+      Particule(radius, (newX, newY), color, direction)
     }
-
-    // Vérifier la collision avec les autres particules
-    val collided = particles.exists(p => p != this && collideWith(p))
-    val newPos = (math.max(0, math.min(newX, boardWidth - radius)), math.max(0, math.min(newY, boardHeight - radius)))
-    new Particule(radius, newPos, color, if (collided) DirectionUtils.randomDirection() else direction)
   }
 
-  private def collideWith(other: Particule): Boolean = {
-    val (dx, dy) = (position._1 - other.position._1, position._2 - other.position._2)
-    val distance = math.sqrt(dx * dx + dy * dy)
-    distance <= radius + other.radius
+  private def distance(p1: (Double, Double), p2: (Double, Double)): Double = {
+    // Distance entre deux points
+    Math.sqrt(Math.pow(p1._1 - p2._1, 2) + Math.pow(p1._2 - p2._2, 2))
   }
 }
