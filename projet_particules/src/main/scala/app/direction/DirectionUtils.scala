@@ -1,8 +1,8 @@
 package app.direction
 
-import scala.util.Random
-
 import app.direction.Direction.*
+
+import scala.util.Random
 
 
 object DirectionUtils {

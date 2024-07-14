@@ -7,7 +7,7 @@ import scala.util.Random
 import app.direction.DirectionUtils
 import scalafx.scene.input.KeyCode.P
 
-final class Particule(val radius: Double, val position: (Double, Double), val color: Color, val direction: Direction) {
+final case class Particule(val radius: Double, val position: (Double, Double), val color: Color, val direction: Direction) {
 
   def update(boardWidth: Int, boardHeight: Int, particles: Array[Particule]): Particule = {
     // Déplacement en fonction de la direction
