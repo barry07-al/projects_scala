@@ -5,6 +5,7 @@
 .metals/
 .bloop/
 project/**/metals.sbt
+project/
 
 ### SBT ###
 # Simple Build Tool
