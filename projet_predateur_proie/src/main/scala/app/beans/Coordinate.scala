@@ -1,3 +1,3 @@
 package app.beans
 
-final case class Coordinate(x: Double, y: Double)
+final case class Coordinate(val x: Double, val y: Double)

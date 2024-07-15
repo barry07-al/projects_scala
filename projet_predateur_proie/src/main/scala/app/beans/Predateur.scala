@@ -3,7 +3,7 @@ package app.beans
 import app.utils.PathFinding
 import scalafx.scene.paint.Color
 
-final case class Predateur(position: Coordinate, radius: Double, color: Color) {
+final case class Predateur(val position: Coordinate, val radius: Double, val color: Color) {
 
   def update(newPosition: Coordinate): Predateur = {
     copy(position = newPosition)
